@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'pushmenu' target in the 'pushmenu' project
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
