@@ -26,6 +26,8 @@
 		1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EAD13E5A1FD002E45B9 /* license.txt */; };
 		1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */; };
 		1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB713E5F299002E45B9 /* pushmenu.sdef */; };
+		1B972EBB13E5FCC9002E45B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */; };
+		1B972EBD13E5FF3C002E45B9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */; };
 		1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04C013E3656800C52B42 /* pushmenu_menu.png */; };
 		1BDF04CF13E36A3000C52B42 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits.html */; };
 /* End PBXBuildFile section */
@@ -39,6 +41,19 @@
 			remoteInfo = pushmenu;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B972EBC13E5FDA3002E45B9 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1B972EBD13E5FF3C002E45B9 /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1B01D27B13E47253007C28E4 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
@@ -74,6 +89,7 @@
 		1B972EAD13E5A1FD002E45B9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3rd-party-licenses.txt"; sourceTree = "<group>"; };
 		1B972EB713E5F299002E45B9 /* pushmenu.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pushmenu.sdef; sourceTree = "<group>"; };
+		1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		1BDF04C013E3656800C52B42 /* pushmenu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_menu.png; sourceTree = "<group>"; };
 		1BDF04CE13E36A3000C52B42 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,6 +101,7 @@
 			files = (
 				1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */,
 				1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */,
+				1B972EBB13E5FCC9002E45B9 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +161,7 @@
 		1B38563B13E359CA002FF437 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */,
 				1B38563C13E359CA002FF437 /* Cocoa.framework */,
 				1B38565A13E359CA002FF437 /* SenTestingKit.framework */,
 				1B38563E13E359CA002FF437 /* Other Frameworks */,
@@ -223,6 +241,7 @@
 				1B38563413E359CA002FF437 /* Sources */,
 				1B38563513E359CA002FF437 /* Frameworks */,
 				1B38563613E359CA002FF437 /* Resources */,
+				1B972EBC13E5FDA3002E45B9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -435,6 +454,10 @@
 		1B38566C13E359CA002FF437 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
 				INFOPLIST_FILE = "pushmenu/pushmenu-Info.plist";
@@ -446,6 +469,10 @@
 		1B38566D13E359CA002FF437 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
 				INFOPLIST_FILE = "pushmenu/pushmenu-Info.plist";
