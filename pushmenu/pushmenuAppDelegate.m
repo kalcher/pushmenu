@@ -77,7 +77,7 @@
     // postponed setup
     [self performSelector: @selector(postponedSetup)
                withObject: nil
-               afterDelay: 0.5];
+               afterDelay: 0.2];
 }
 
 - (void) postponedSetup
