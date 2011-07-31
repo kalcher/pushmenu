@@ -20,8 +20,6 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>CFBundleSignature</key>
-	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array/>
 	<key>CFBundleVersion</key>
@@ -44,6 +42,10 @@
 	<array/>
 	<key>OSAScriptingDefinition</key>
 	<string>pushmenu.sdef</string>
+	<key>SUFeedURL</key>
+	<string>https://github.com/kalcher/pushmenu/raw/master/pushmenu-appcast.xml</string>
+	<key>SUScheduledCheckInterval</key>
+	<string>172800</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array/>
 	<key>UTImportedTypeDeclarations</key>
