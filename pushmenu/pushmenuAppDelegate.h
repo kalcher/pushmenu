@@ -40,6 +40,8 @@
     
     IBOutlet NSMenu			*pmMenu;
     IBOutlet NSTextView		*credits;
+    IBOutlet NSWindow		*prefWindow;
+    IBOutlet NSWindow		*aboutWindow;
 
     // Prowl
     IBOutlet NSTextField	*ProwlApikey;

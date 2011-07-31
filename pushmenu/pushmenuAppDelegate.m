@@ -101,6 +101,11 @@
     if (BKeychainItem != nil) {
         [BoxcarPassword setStringValue: BKeychainItem.password];
     }
+
+    if ([[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"systemstartup"] == Nil) {
+		[prefWindow makeKeyAndOrderFront:self];
+		[aboutWindow makeKeyAndOrderFront:self];
+	}
 }
 
 - (void)controlTextDidChange:(NSNotification *)aNotification
