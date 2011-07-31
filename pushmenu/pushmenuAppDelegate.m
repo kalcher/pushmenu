@@ -448,7 +448,7 @@
                                                  @"https://api.notifo.com/v1/send_notification", 
                                                  nil]];
     
-    NSLog(@"%@",[[task arguments]description]);
+    // NSLog(@"%@",[[task arguments]description]);
     
     NSPipe *outpipe = [NSPipe pipe];
     NSPipe *inpipe = [NSPipe pipe];
@@ -474,8 +474,10 @@
     // Notifo JSON answer looks like this:
     // {"status":"success","response_code":2201,"response_message":"OK"}
     
-    NSLog(@"%@", [deserializedData valueForKey:@"status"]);
-    
+    if (![[deserializedData valueForKey:@"status"] isEqualToString:@"success"]) {
+        NSLog(@"Error sending message to Notifo.");
+    }
+
     [answer release];
     
 }
@@ -514,7 +516,7 @@
                                 @"https://boxcar.io/notifications", 
                                 nil]];
     
-    NSLog(@"%@",[[task arguments]description]);
+    // NSLog(@"%@",[[task arguments]description]);
     
     NSPipe *pipe = [NSPipe pipe];
     NSPipe *inpipe = [NSPipe pipe];
@@ -529,12 +531,26 @@
     [[inpipe fileHandleForWriting] closeFile];
     
     NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
-    
+
     [task waitUntilExit];
     [task release];
     
     NSString *answer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog (@"got\n%@", answer);
+
+    // we're only getting some HTTP headers
+    NSArray *lines = [answer componentsSeparatedByString:@"\n"];
+    BOOL ok = FALSE;
+    for(NSString *line in lines) {
+        NSRange range = [line rangeOfString:@"Status: 200"] ;
+        if (range.location == 0) {
+            ok = TRUE;
+        }
+    }
+    
+    if (!ok) {
+        NSLog(@"Error sending message to Boxcar.");
+    }
+    
     [answer release];
     
 }
