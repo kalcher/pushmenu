@@ -228,7 +228,9 @@
     }       
 }
 
-// Clipboard
+//////////////////////////////////////////////////
+// Clipboard to Phone 
+//////////////////////////////////////////////////
 - (void)clipboard2iPhone:(id) sender {
 	
 	NSString *description;
@@ -261,8 +263,9 @@
     }
 }
 
-
+//////////////////////////////////////////////////
 // Prowl
+//////////////////////////////////////////////////
 - (void)prowlSendMessage:(NSString *)message {
 	
 	// shorten the description string
@@ -413,7 +416,9 @@
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
 }
 
+//////////////////////////////////////////////////
 // Notifo
+//////////////////////////////////////////////////
 - (void)notifoSendMessage:(NSString *)message {
 
 	// shorten the description string
@@ -482,7 +487,9 @@
     
 }
 
+//////////////////////////////////////////////////
 // Boxcar
+//////////////////////////////////////////////////
 - (void)boxcarSendMessage:(NSString *)message {
     
 	// shorten the description string
@@ -555,16 +562,22 @@
     
 }
 
+//////////////////////////////////////////////////
 //
 //  AppleScript Interface
 //
+//  This is called from apple script with a 
+//  message to send.
+//
+//  Example AppleScript:
+//
+//    tell application "pushmenu"
+//         sendmessage "hello world"
+//    end tell
+//
+//////////////////////////////////////////////////
 - (id)performDefaultImplementation {
-    // This is called from apple script with a message to send
     
-    //    tell application "pushmenu"
-    //         sendmessage "hello world"
-    //    end tell
-
     // check which services are active
     ProwlActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
                     valueForKey:@"ProwlActive"]boolValue];
