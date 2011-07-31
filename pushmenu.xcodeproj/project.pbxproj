@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D27C13E47253007C28E4 /* EMKeychainItem.m */; };
+		1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D27D13E47253007C28E4 /* ReadMe.rtf */; };
+		1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01D28113E474D0007C28E4 /* Security.framework */; };
 		1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38563C13E359CA002FF437 /* Cocoa.framework */; };
 		1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B38564513E359CA002FF437 /* InfoPlist.strings */; };
 		1B38564913E359CA002FF437 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38564813E359CA002FF437 /* main.m */; };
@@ -18,6 +21,11 @@
 		1B38566413E359CA002FF437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B38566213E359CA002FF437 /* InfoPlist.strings */; };
 		1B38566613E359CA002FF437 /* pushmenuTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 1B38566513E359CA002FF437 /* pushmenuTests.h */; };
 		1B38566813E359CA002FF437 /* pushmenuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38566713E359CA002FF437 /* pushmenuTests.m */; };
+		1B38567213E359DD002FF437 /* pushmenu_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567113E359DD002FF437 /* pushmenu_large.png */; };
+		1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567313E35A5F002FF437 /* pushmenu.icns */; };
+		1B38567613E35B9A002FF437 /* pushmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567513E35B9A002FF437 /* pushmenu.png */; };
+		1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04C013E3656800C52B42 /* pushmenu_menu.png */; };
+		1BDF04CF13E36A3000C52B42 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,25 +39,34 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B01D27B13E47253007C28E4 /* EMKeychainItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EMKeychainItem.h; sourceTree = "<group>"; };
+		1B01D27C13E47253007C28E4 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
+		1B01D27D13E47253007C28E4 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
+		1B01D28113E474D0007C28E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		1B38563813E359CA002FF437 /* pushmenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushmenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B38563C13E359CA002FF437 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B38563F13E359CA002FF437 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		1B38564013E359CA002FF437 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1B38564113E359CA002FF437 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1B38564413E359CA002FF437 /* pushmenu-Info.plist */ = {isa = PBXFileReference; path = "pushmenu-Info.plist"; sourceTree = "<group>"; };
+		1B38564413E359CA002FF437 /* pushmenu-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pushmenu-Info.plist"; sourceTree = "<group>"; };
 		1B38564613E359CA002FF437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B38564813E359CA002FF437 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1B38564A13E359CA002FF437 /* pushmenu-Prefix.pch */ = {isa = PBXFileReference; path = "pushmenu-Prefix.pch"; sourceTree = "<group>"; };
+		1B38564A13E359CA002FF437 /* pushmenu-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pushmenu-Prefix.pch"; sourceTree = "<group>"; };
 		1B38564C13E359CA002FF437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		1B38564E13E359CA002FF437 /* pushmenuAppDelegate.h */ = {isa = PBXFileReference; path = pushmenuAppDelegate.h; sourceTree = "<group>"; };
+		1B38564E13E359CA002FF437 /* pushmenuAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pushmenuAppDelegate.h; sourceTree = "<group>"; };
 		1B38564F13E359CA002FF437 /* pushmenuAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pushmenuAppDelegate.m; sourceTree = "<group>"; };
 		1B38565213E359CA002FF437 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		1B38565913E359CA002FF437 /* pushmenuTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushmenuTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B38565A13E359CA002FF437 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		1B38566113E359CA002FF437 /* pushmenuTests-Info.plist */ = {isa = PBXFileReference; path = "pushmenuTests-Info.plist"; sourceTree = "<group>"; };
+		1B38566113E359CA002FF437 /* pushmenuTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "pushmenuTests-Info.plist"; sourceTree = "<group>"; };
 		1B38566313E359CA002FF437 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1B38566513E359CA002FF437 /* pushmenuTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pushmenuTests.h; sourceTree = "<group>"; };
 		1B38566713E359CA002FF437 /* pushmenuTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pushmenuTests.m; sourceTree = "<group>"; };
+		1B38567113E359DD002FF437 /* pushmenu_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_large.png; sourceTree = SOURCE_ROOT; };
+		1B38567313E35A5F002FF437 /* pushmenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = pushmenu.icns; sourceTree = SOURCE_ROOT; };
+		1B38567513E35B9A002FF437 /* pushmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu.png; sourceTree = SOURCE_ROOT; };
+		1BDF04C013E3656800C52B42 /* pushmenu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_menu.png; sourceTree = "<group>"; };
+		1BDF04CE13E36A3000C52B42 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */,
 				1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,9 +91,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B01D27A13E47253007C28E4 /* EMKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				1B01D27B13E47253007C28E4 /* EMKeychainItem.h */,
+				1B01D27C13E47253007C28E4 /* EMKeychainItem.m */,
+				1B01D27D13E47253007C28E4 /* ReadMe.rtf */,
+			);
+			path = EMKeychain;
+			sourceTree = "<group>";
+		};
 		1B38562D13E359C9002FF437 = {
 			isa = PBXGroup;
 			children = (
+				1B01D28113E474D0007C28E4 /* Security.framework */,
 				1B38564213E359CA002FF437 /* pushmenu */,
 				1B38565F13E359CA002FF437 /* pushmenuTests */,
 				1B38563B13E359CA002FF437 /* Frameworks */,
@@ -115,6 +144,7 @@
 		1B38564213E359CA002FF437 /* pushmenu */ = {
 			isa = PBXGroup;
 			children = (
+				1B01D27A13E47253007C28E4 /* EMKeychain */,
 				1B38564E13E359CA002FF437 /* pushmenuAppDelegate.h */,
 				1B38564F13E359CA002FF437 /* pushmenuAppDelegate.m */,
 				1B38565113E359CA002FF437 /* MainMenu.xib */,
@@ -126,6 +156,11 @@
 		1B38564313E359CA002FF437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1BDF04C013E3656800C52B42 /* pushmenu_menu.png */,
+				1B38567113E359DD002FF437 /* pushmenu_large.png */,
+				1B38567513E35B9A002FF437 /* pushmenu.png */,
+				1B38567313E35A5F002FF437 /* pushmenu.icns */,
+				1BDF04CE13E36A3000C52B42 /* credits.html */,
 				1B38564413E359CA002FF437 /* pushmenu-Info.plist */,
 				1B38564513E359CA002FF437 /* InfoPlist.strings */,
 				1B38564813E359CA002FF437 /* main.m */,
@@ -224,6 +259,12 @@
 				1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */,
 				1B38564D13E359CA002FF437 /* Credits.rtf in Resources */,
 				1B38565313E359CA002FF437 /* MainMenu.xib in Resources */,
+				1B38567213E359DD002FF437 /* pushmenu_large.png in Resources */,
+				1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */,
+				1B38567613E35B9A002FF437 /* pushmenu.png in Resources */,
+				1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */,
+				1BDF04CF13E36A3000C52B42 /* credits.html in Resources */,
+				1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +302,7 @@
 			files = (
 				1B38564913E359CA002FF437 /* main.m in Sources */,
 				1B38565013E359CA002FF437 /* pushmenuAppDelegate.m in Sources */,
+				1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +474,7 @@
 				1B38566D13E359CA002FF437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B38566E13E359CA002FF437 /* Build configuration list for PBXNativeTarget "pushmenuTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +483,7 @@
 				1B38567013E359CA002FF437 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
