@@ -76,6 +76,7 @@
 		1B38567513E35B9A002FF437 /* pushmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu.png; sourceTree = SOURCE_ROOT; };
 		1B972EAD13E5A1FD002E45B9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3rd-party-licenses.txt"; sourceTree = "<group>"; };
+		1B972EB213E5D577002E45B9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1BDF04C013E3656800C52B42 /* pushmenu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_menu.png; sourceTree = "<group>"; };
 		1BDF04CE13E36A3000C52B42 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -179,6 +180,7 @@
 		1B38564313E359CA002FF437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B972EB213E5D577002E45B9 /* README.md */,
 				1B972EAD13E5A1FD002E45B9 /* license.txt */,
 				1BDF04C013E3656800C52B42 /* pushmenu_menu.png */,
 				1B38567113E359DD002FF437 /* pushmenu_large.png */,
