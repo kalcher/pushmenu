@@ -555,5 +555,35 @@
     
 }
 
+//
+//  AppleScript Interface
+//
+- (id)performDefaultImplementation {
+    // This is called from apple script with a message to send
+    
+    //    tell application "pushmenu"
+    //         sendmessage "hello world"
+    //    end tell
+
+    // check which services are active
+    ProwlActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
+                    valueForKey:@"ProwlActive"]boolValue];
+    NotifoActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
+                     valueForKey:@"NotifoActive"]boolValue];
+    BoxcarActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
+                     valueForKey:@"BoxcarActive"]boolValue];
+    
+	if (ProwlActive) {
+        [self prowlSendMessage: [self directParameter]];
+    }
+    if (NotifoActive) {
+        [self notifoSendMessage: [self directParameter]];
+	}
+    if (BoxcarActive) {
+        [self boxcarSendMessage: [self directParameter]];
+    }
+
+	return nil;
+}
 
 @end

@@ -29,9 +29,9 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface pushmenuAppDelegate : NSObject < NSApplicationDelegate,
-                                            NSXMLParserDelegate, 
-                                            NSTextFieldDelegate> {
+@interface pushmenuAppDelegate : NSScriptCommand <  NSApplicationDelegate,
+                                                    NSXMLParserDelegate, 
+                                                    NSTextFieldDelegate> {
     NSWindow                *window;
     NSStatusItem			*pmItem;
     
@@ -68,6 +68,9 @@
 - (void)prowlSendMessage:(NSString *)message;
 - (void)notifoSendMessage:(NSString *)message;
 - (void)boxcarSendMessage:(NSString *)message;
+
+// Applescript
+- (id)performDefaultImplementation;
 
 
 - (NSString *)urlEncodeString:(NSString *)str;

@@ -1,10 +1,10 @@
 <dictionary xmlns:xi="http://www.w3.org/2003/XInclude">
     
-    <suite name="pushmenu commands" code="PUSH" description="Terminology for pushmenu">
+    <suite name="pushmenu commands" code="PUSM" description="Terminology for pushmenu">
         
-        <command name="send message" code="PUSHmess" description="send a text message to pushmenu">
-            <cocoa class="pushlmenuAppDelegate"/>
-            <direct-parameter description="a text parameter passed to pushlmenu">
+        <command name="sendmessage" code="PUSMmess" description="send a text message to pushmenu">
+            <cocoa class="pushmenuAppDelegate"/>
+            <direct-parameter description="a text parameter passed to pushmenu">
                 <type type="text"/>
             </direct-parameter>
         </command>
