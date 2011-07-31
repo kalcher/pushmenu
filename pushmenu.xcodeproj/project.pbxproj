@@ -27,6 +27,7 @@
 		1B38567213E359DD002FF437 /* pushmenu_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567113E359DD002FF437 /* pushmenu_large.png */; };
 		1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567313E35A5F002FF437 /* pushmenu.icns */; };
 		1B38567613E35B9A002FF437 /* pushmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567513E35B9A002FF437 /* pushmenu.png */; };
+		1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EAD13E5A1FD002E45B9 /* license.txt */; };
 		1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04C013E3656800C52B42 /* pushmenu_menu.png */; };
 		1BDF04CF13E36A3000C52B42 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits.html */; };
 /* End PBXBuildFile section */
@@ -72,6 +73,7 @@
 		1B38567113E359DD002FF437 /* pushmenu_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_large.png; sourceTree = SOURCE_ROOT; };
 		1B38567313E35A5F002FF437 /* pushmenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = pushmenu.icns; sourceTree = SOURCE_ROOT; };
 		1B38567513E35B9A002FF437 /* pushmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu.png; sourceTree = SOURCE_ROOT; };
+		1B972EAD13E5A1FD002E45B9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		1BDF04C013E3656800C52B42 /* pushmenu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_menu.png; sourceTree = "<group>"; };
 		1BDF04CE13E36A3000C52B42 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -175,6 +177,7 @@
 		1B38564313E359CA002FF437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B972EAD13E5A1FD002E45B9 /* license.txt */,
 				1BDF04C013E3656800C52B42 /* pushmenu_menu.png */,
 				1B38567113E359DD002FF437 /* pushmenu_large.png */,
 				1B38567513E35B9A002FF437 /* pushmenu.png */,
@@ -286,6 +289,7 @@
 				1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */,
 				1B01D29013E4E570007C28E4 /* CHANGELOG.md in Resources */,
 				1B01D29213E4E570007C28E4 /* README.md in Resources */,
+				1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,6 +427,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
