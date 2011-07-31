@@ -1393,14 +1393,6 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 					<object class="IBActionConnection" key="connection">
 						<string key="label">checkForUpdates:</string>
 						<reference key="source" ref="439116636"/>
-						<reference key="destination" ref="93425999"/>
-					</object>
-					<int key="connectionID">664</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">checkForUpdates:</string>
-						<reference key="source" ref="439116636"/>
 						<reference key="destination" ref="622269192"/>
 					</object>
 					<int key="connectionID">665</int>
