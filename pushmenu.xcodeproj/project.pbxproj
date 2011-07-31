@@ -8,15 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D27C13E47253007C28E4 /* EMKeychainItem.m */; };
-		1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D27D13E47253007C28E4 /* ReadMe.rtf */; };
 		1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01D28113E474D0007C28E4 /* Security.framework */; };
-		1B01D29013E4E570007C28E4 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D28C13E4E570007C28E4 /* CHANGELOG.md */; };
 		1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D28E13E4E570007C28E4 /* JSONKit.m */; };
-		1B01D29213E4E570007C28E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D28F13E4E570007C28E4 /* README.md */; };
 		1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38563C13E359CA002FF437 /* Cocoa.framework */; };
 		1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B38564513E359CA002FF437 /* InfoPlist.strings */; };
 		1B38564913E359CA002FF437 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38564813E359CA002FF437 /* main.m */; };
-		1B38564D13E359CA002FF437 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B38564B13E359CA002FF437 /* Credits.rtf */; };
 		1B38565013E359CA002FF437 /* pushmenuAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38564F13E359CA002FF437 /* pushmenuAppDelegate.m */; };
 		1B38565313E359CA002FF437 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B38565113E359CA002FF437 /* MainMenu.xib */; };
 		1B38565B13E359CA002FF437 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38565A13E359CA002FF437 /* SenTestingKit.framework */; };
@@ -285,16 +281,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */,
-				1B38564D13E359CA002FF437 /* Credits.rtf in Resources */,
 				1B38565313E359CA002FF437 /* MainMenu.xib in Resources */,
 				1B38567213E359DD002FF437 /* pushmenu_large.png in Resources */,
 				1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */,
 				1B38567613E35B9A002FF437 /* pushmenu.png in Resources */,
 				1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */,
 				1BDF04CF13E36A3000C52B42 /* credits.html in Resources */,
-				1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */,
-				1B01D29013E4E570007C28E4 /* CHANGELOG.md in Resources */,
-				1B01D29213E4E570007C28E4 /* README.md in Resources */,
 				1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */,
 				1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */,
 				1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */,
