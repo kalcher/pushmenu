@@ -108,6 +108,13 @@
 	}
 }
 
+- (void)display3rdPartyLicenses:(id)sender{
+	NSString *FilePath = [[NSBundle mainBundle] pathForResource:@"3rd-party-licenses" ofType:@"txt"];
+	NSWorkspace *workspace = [NSWorkspace sharedWorkspace];
+	[workspace openFile:FilePath];
+	
+}
+
 - (void)controlTextDidChange:(NSNotification *)aNotification
 {
     id senderInfo = [aNotification object];

@@ -63,6 +63,7 @@
 
 - (IBAction)handleLoginItem:(id)sender;
 - (IBAction)clipboard2iPhone:(id)sender;
+- (IBAction)display3rdPartyLicenses:(id)sender;
 
 - (void)prowlSendMessage:(NSString *)message;
 - (void)notifoSendMessage:(NSString *)message;

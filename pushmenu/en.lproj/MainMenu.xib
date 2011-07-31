@@ -547,7 +547,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 																<int key="NSCellFlags">75628032</int>
 																<int key="NSCellFlags2">0</int>
 																<string key="NSContents"/>
-																<object class="NSFont" key="NSSupport" id="335294853">
+																<object class="NSFont" key="NSSupport" id="1040487889">
 																	<string key="NSName">LucidaGrande</string>
 																	<double key="NSSize">12</double>
 																	<int key="NSfFlags">16</int>
@@ -616,7 +616,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 												<int key="NSCellFlags">-1543373312</int>
 												<int key="NSCellFlags2">134217728</int>
 												<string key="NSContents">Validate</string>
-												<reference key="NSSupport" ref="335294853"/>
+												<reference key="NSSupport" ref="1040487889"/>
 												<string key="NSCellIdentifier">_NS:1642</string>
 												<reference key="NSControlView" ref="270030367"/>
 												<int key="NSButtonFlags">-2038152961</int>
@@ -1026,7 +1026,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 								<int key="NSCellFlags">67239424</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Check now</string>
-								<reference key="NSSupport" ref="335294853"/>
+								<reference key="NSSupport" ref="1040487889"/>
 								<string key="NSCellIdentifier">_NS:1642</string>
 								<reference key="NSControlView" ref="622269192"/>
 								<int key="NSButtonFlags">-2038152961</int>
@@ -1297,6 +1297,14 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 						<reference key="destination" ref="1003223034"/>
 					</object>
 					<int key="connectionID">658</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">display3rdPartyLicenses:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="543607619"/>
+					</object>
+					<int key="connectionID">659</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1945,7 +1953,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">658</int>
+			<int key="maxID">659</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
