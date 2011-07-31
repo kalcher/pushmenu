@@ -2,9 +2,31 @@
 //  pushmenuAppDelegate.m
 //  pushmenu
 //
-//  Created by Sebastian Kalcher on 29.07.11.
-//  Copyright 2011 Sebastian Kalcher. All rights reserved.
+// Copyright (c) 2011, Sebastian Kalcher. 
+// All rights reserved.
 //
+// Redistribution and use in source and binary forms, with or without
+// modification, are permitted provided that the following conditions are met:
+// * Redistributions of source code must retain the above copyright
+// notice, this list of conditions and the following disclaimer.
+// * Redistributions in binary form must reproduce the above copyright
+// notice, this list of conditions and the following disclaimer in the
+// documentation and/or other materials provided with the distribution.
+// * Neither the name of Sebastian Kalcher nor the names of the contributors
+// may be used to endorse or promote products derived from this software
+// without specific prior written permission.
+//
+// THIS SOFTWARE IS PROVIDED BY COPYRIGHT HOLDERS ''AS IS'' AND ANY
+// EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+// WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+// DISCLAIMED. IN NO EVENT SHALL SEBASTIAN KALCHER BE LIABLE FOR ANY
+// DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+// (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+// LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+// ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+// (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+// SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
 
 #import "pushmenuAppDelegate.h"
 #import "EMKeychain/EMKeychainItem.h"
@@ -182,8 +204,7 @@
         }
 		
         if (startup && (existingLoginItem == NULL)) {
-            LSSharedFileListItemRef newLoginItem = LSSharedFileListInsertItemURL(loginItemsList, kLSSharedFileListItemBeforeFirst,
-																				 NULL, NULL, programUrl, NULL, NULL);
+            LSSharedFileListItemRef newLoginItem = LSSharedFileListInsertItemURL(loginItemsList, kLSSharedFileListItemBeforeFirst,NULL, NULL, programUrl, NULL, NULL);
 			// we definitely have to release myitem
 			if (newLoginItem != NULL)
 				CFRelease(newLoginItem);
@@ -397,7 +418,9 @@
         return;
     }
 
-    NSString *credentials = [NSString stringWithFormat:@"user = %@:%@\n", NKeychainItem.username, NKeychainItem.password];
+    NSString *credentials = [NSString stringWithFormat:@"user = %@:%@\n", 
+                                                       NKeychainItem.username, 
+                                                       NKeychainItem.password];
     
     NSString *payload = [NSString stringWithFormat:@"to=%@&msg=%@", 
                                                    NKeychainItem.username, 
@@ -453,16 +476,18 @@
 		message = [message substringToIndex:1000];
 	}
     
-    NSString *NName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-    EMGenericKeychainItem *NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                                   withUsername: NName]; 
+    NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
+    EMGenericKeychainItem *BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
+                                                                                   withUsername: BName]; 
     
-    if (NKeychainItem == nil) {
+    if (BKeychainItem == nil) {
         NSLog(@"Not configured");
         return;
     }
     
-    NSString *credentials = [NSString stringWithFormat:@"%@:%@", NKeychainItem.username, NKeychainItem.password];
+    NSString *credentials = [NSString stringWithFormat:@"user = %@:%@\n", 
+                             BKeychainItem.username, 
+                             BKeychainItem.password];
     
     NSString *payload = [NSString stringWithFormat:@"notification[from_screen_name]=pushmenu&notification[message]=%@", 
                          [self urlEncodeString:message]];
@@ -472,10 +497,10 @@
     
     NSTask *task = [NSTask new];
     [task setLaunchPath:@"/usr/bin/curl"];
-    [task setArguments:[NSArray arrayWithObjects:@"-u", credentials, 
-                        @"-d", payload, @"-i",
-                        @"https://boxcar.io/notifications", 
-                        nil]];
+    [task setArguments:[NSArray arrayWithObjects:@"-K-",
+                                @"-d", payload, @"-i",
+                                @"https://boxcar.io/notifications", 
+                                nil]];
     
     NSLog(@"%@",[[task arguments]description]);
     
@@ -488,6 +513,8 @@
     [task setStandardError:devnull];
     
     [task launch];
+    [[inpipe fileHandleForWriting] writeData: [credentials dataUsingEncoding: NSUTF8StringEncoding]];
+    [[inpipe fileHandleForWriting] closeFile];
     
     NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
     
