@@ -10,6 +10,9 @@
 		1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D27C13E47253007C28E4 /* EMKeychainItem.m */; };
 		1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D27D13E47253007C28E4 /* ReadMe.rtf */; };
 		1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01D28113E474D0007C28E4 /* Security.framework */; };
+		1B01D29013E4E570007C28E4 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D28C13E4E570007C28E4 /* CHANGELOG.md */; };
+		1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D28E13E4E570007C28E4 /* JSONKit.m */; };
+		1B01D29213E4E570007C28E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 1B01D28F13E4E570007C28E4 /* README.md */; };
 		1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38563C13E359CA002FF437 /* Cocoa.framework */; };
 		1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B38564513E359CA002FF437 /* InfoPlist.strings */; };
 		1B38564913E359CA002FF437 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38564813E359CA002FF437 /* main.m */; };
@@ -43,6 +46,10 @@
 		1B01D27C13E47253007C28E4 /* EMKeychainItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EMKeychainItem.m; sourceTree = "<group>"; };
 		1B01D27D13E47253007C28E4 /* ReadMe.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = ReadMe.rtf; sourceTree = "<group>"; };
 		1B01D28113E474D0007C28E4 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		1B01D28C13E4E570007C28E4 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		1B01D28D13E4E570007C28E4 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		1B01D28E13E4E570007C28E4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		1B01D28F13E4E570007C28E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1B38563813E359CA002FF437 /* pushmenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushmenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B38563C13E359CA002FF437 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B38563F13E359CA002FF437 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -101,6 +108,17 @@
 			path = EMKeychain;
 			sourceTree = "<group>";
 		};
+		1B01D28B13E4E570007C28E4 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				1B01D28C13E4E570007C28E4 /* CHANGELOG.md */,
+				1B01D28D13E4E570007C28E4 /* JSONKit.h */,
+				1B01D28E13E4E570007C28E4 /* JSONKit.m */,
+				1B01D28F13E4E570007C28E4 /* README.md */,
+			);
+			path = JSONKit;
+			sourceTree = "<group>";
+		};
 		1B38562D13E359C9002FF437 = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +162,7 @@
 		1B38564213E359CA002FF437 /* pushmenu */ = {
 			isa = PBXGroup;
 			children = (
+				1B01D28B13E4E570007C28E4 /* JSONKit */,
 				1B01D27A13E47253007C28E4 /* EMKeychain */,
 				1B38564E13E359CA002FF437 /* pushmenuAppDelegate.h */,
 				1B38564F13E359CA002FF437 /* pushmenuAppDelegate.m */,
@@ -265,6 +284,8 @@
 				1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */,
 				1BDF04CF13E36A3000C52B42 /* credits.html in Resources */,
 				1B01D27F13E47253007C28E4 /* ReadMe.rtf in Resources */,
+				1B01D29013E4E570007C28E4 /* CHANGELOG.md in Resources */,
+				1B01D29213E4E570007C28E4 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +324,7 @@
 				1B38564913E359CA002FF437 /* main.m in Sources */,
 				1B38565013E359CA002FF437 /* pushmenuAppDelegate.m in Sources */,
 				1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */,
+				1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

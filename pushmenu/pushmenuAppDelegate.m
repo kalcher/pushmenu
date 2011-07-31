@@ -3,11 +3,12 @@
 //  pushmenu
 //
 //  Created by Sebastian Kalcher on 29.07.11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011 Sebastian Kalcher. All rights reserved.
 //
 
 #import "pushmenuAppDelegate.h"
 #import "EMKeychain/EMKeychainItem.h"
+#import "JSONKit/JSONKit.h"
 
 @implementation pushmenuAppDelegate
 
@@ -208,6 +209,7 @@
     
 	description = [copiedItems objectAtIndex:0];
 
+    // check which services are active
     ProwlActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
                     valueForKey:@"ProwlActive"]boolValue];
     NotifoActive = [[[[NSUserDefaultsController sharedUserDefaultsController] values] 
@@ -412,13 +414,15 @@
                                                  nil]];
     
     NSLog(@"%@",[[task arguments]description]);
-    NSLog(@"%@",[credentials dataUsingEncoding:NSUTF8StringEncoding]);
     
     NSPipe *outpipe = [NSPipe pipe];
     NSPipe *inpipe = [NSPipe pipe];
+    NSFileHandle *devnull = [NSFileHandle fileHandleForWritingAtPath:@"/dev/null"];
+
 
     [task setStandardOutput:outpipe];
     [task setStandardInput:inpipe];
+    [task setStandardError:devnull];
         
     [task launch];
     [[inpipe fileHandleForWriting] writeData: [credentials dataUsingEncoding: NSUTF8StringEncoding]];
@@ -430,7 +434,13 @@
     [task release];
     
     NSString *answer = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    NSLog (@"got\n%@", answer);
+    NSDictionary *deserializedData = [answer objectFromJSONString];
+
+    // Notifo JSON answer looks like this:
+    // {"status":"success","response_code":2201,"response_message":"OK"}
+    
+    NSLog(@"%@", [deserializedData valueForKey:@"status"]);
+    
     [answer release];
     
 }
@@ -463,14 +473,19 @@
     NSTask *task = [NSTask new];
     [task setLaunchPath:@"/usr/bin/curl"];
     [task setArguments:[NSArray arrayWithObjects:@"-u", credentials, 
-                        @"-d", payload, 
+                        @"-d", payload, @"-i",
                         @"https://boxcar.io/notifications", 
                         nil]];
     
     NSLog(@"%@",[[task arguments]description]);
     
     NSPipe *pipe = [NSPipe pipe];
+    NSPipe *inpipe = [NSPipe pipe];
+    NSFileHandle *devnull = [NSFileHandle fileHandleForWritingAtPath:@"/dev/null"];
+
     [task setStandardOutput:pipe];
+    [task setStandardInput:inpipe];
+    [task setStandardError:devnull];
     
     [task launch];
     
