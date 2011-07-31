@@ -43,7 +43,7 @@
 	<key>OSAScriptingDefinition</key>
 	<string>pushmenu.sdef</string>
 	<key>SUFeedURL</key>
-	<string>https://github.com/kalcher/pushmenu/raw/master/pushmenu-appcast.xml</string>
+	<string>https://raw.github.com/kalcher/pushmenu/master/pushmenu-appcast.xml</string>
 	<key>SUScheduledCheckInterval</key>
 	<string>172800</string>
 	<key>UTExportedTypeDeclarations</key>
