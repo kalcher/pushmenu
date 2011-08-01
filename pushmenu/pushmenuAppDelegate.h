@@ -42,6 +42,7 @@
     IBOutlet NSTextView		*credits;
     IBOutlet NSWindow		*prefWindow;
     IBOutlet NSWindow		*aboutWindow;
+    IBOutlet NSButtonCell   *installService;
 
     // Prowl
     IBOutlet NSTextField	*ProwlApikey;
