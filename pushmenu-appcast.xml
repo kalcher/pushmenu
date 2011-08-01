@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle"  
+    xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <channel>
+        <title>pushmenu Changelog</title>
+        <link>https://raw.github.com/kalcher/pushmenu/master/pushmenu-appcast.xml</link>
+        <description>pushmenu</description>
+        <language>en</language>
+        <item>
+            <title>Version 0.1 (initial release)</title>
+            <description><![CDATA[
+                <table style="border: dotted 1px #ccc;" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                <td style="background-color: #e6edff;margin: -3px" colspan="2">
+                <h3>Initial release (0.1)</h3>
+                </td>
+                </tr>
+                <tr>
+                <td valign="top">
+                <p>Push messages from the menu bar to your iPhone. Currently supports the
+                following services:
+                <ul>
+                <li>Prowl</li>
+                <li>Notifo</li>
+                <li>Boxcar</li>
+                </ul>
+                </p>
+                </td>
+                </tr>
+                </table>
+            ]]></description>
+			
+            <pubDate>Mo  1 Aug 2011 23:01:05 CEST</pubDate>
+            <enclosure url="https://raw.github.com/kalcher/pushmenu/master/" 
+            sparkle:version="0.1" 
+            length="4765700" type="application/octet-stream" />
+        </item>
+    </channel>
