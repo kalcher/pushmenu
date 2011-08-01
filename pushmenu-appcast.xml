@@ -20,9 +20,9 @@
                 <p>Push messages from the menu bar to your iPhone. Currently supports the
                 following services:
                 <ul>
-                <li>Prowl</li>
-                <li>Notifo</li>
-                <li>Boxcar</li>
+                <li>Prowl <a href="http://www.prowlapp.com/">http://www.prowlapp.com/</a></li>
+                <li>Notifo <a href="http://notifo.com/">http://notifo.com/</a></li>
+                <li>Boxcar <a href="http://boxcar.io/">http://boxcar.io/</a></li>
                 </ul>
                 </p>
                 </td>
@@ -36,3 +36,4 @@
             length="4765700" type="application/octet-stream" />
         </item>
     </channel>
+</rss>
