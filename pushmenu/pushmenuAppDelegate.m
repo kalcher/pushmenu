@@ -106,6 +106,17 @@
 		[prefWindow makeKeyAndOrderFront:self];
 		[aboutWindow makeKeyAndOrderFront:self];
 	}
+    
+    // check whether pushmenu service is installed
+    // and set the checkbox appropriately 
+    NSFileManager *FM = [NSFileManager defaultManager];
+    NSString *pServiceFile = [@"~/Library/Services/SendtoiPhone.workflow" stringByExpandingTildeInPath];
+    if ([FM fileExistsAtPath:pServiceFile]){
+        [installService setState:NSOnState];
+    } else {
+        [installService setState:NSOffState];
+    }
+
 }
 
 - (void)display3rdPartyLicenses:(id)sender{
