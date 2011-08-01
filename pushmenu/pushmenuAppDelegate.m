@@ -599,4 +599,22 @@
 	return nil;
 }
 
+
+//////////////////////////////////////////////////
+// Install the services menu entry
+//////////////////////////////////////////////////
+- (void) installService:(id) sender {
+    
+    NSFileManager *FM = [NSFileManager defaultManager];
+    NSString *destination;
+    NSString *serviceFile = [[NSBundle mainBundle] pathForResource:@"SendtoiPhone" 
+                                                            ofType:@"workflow"];
+
+    destination = [@"~/Library/Services/SendtoiPhone.workflow" stringByExpandingTildeInPath];
+    
+    if ([FM fileExistsAtPath:serviceFile]) 
+    {
+        [FM copyItemAtPath:serviceFile toPath:destination error:Nil];
+    }
+}
 @end
