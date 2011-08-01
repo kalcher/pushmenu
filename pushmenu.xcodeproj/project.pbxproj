@@ -23,12 +23,12 @@
 		1B38567213E359DD002FF437 /* pushmenu_large.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567113E359DD002FF437 /* pushmenu_large.png */; };
 		1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567313E35A5F002FF437 /* pushmenu.icns */; };
 		1B38567613E35B9A002FF437 /* pushmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567513E35B9A002FF437 /* pushmenu.png */; };
+		1B827F6B13E7410B00D661CC /* SendtoiPhone.workflow in Resources */ = {isa = PBXBuildFile; fileRef = 1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */; };
 		1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EAD13E5A1FD002E45B9 /* license.txt */; };
 		1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */; };
 		1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB713E5F299002E45B9 /* pushmenu.sdef */; };
 		1B972EBB13E5FCC9002E45B9 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */; };
 		1B972EBD13E5FF3C002E45B9 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B972EBA13E5FCC9002E45B9 /* Sparkle.framework */; };
-		1B972EBF13E60551002E45B9 /* pushmenu-appcast.xml in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EBE13E60551002E45B9 /* pushmenu-appcast.xml */; };
 		1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04C013E3656800C52B42 /* pushmenu_menu.png */; };
 		1BDF04CF13E36A3000C52B42 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits.html */; };
 /* End PBXBuildFile section */
@@ -87,6 +87,7 @@
 		1B38567113E359DD002FF437 /* pushmenu_large.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_large.png; sourceTree = SOURCE_ROOT; };
 		1B38567313E35A5F002FF437 /* pushmenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = pushmenu.icns; sourceTree = SOURCE_ROOT; };
 		1B38567513E35B9A002FF437 /* pushmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu.png; sourceTree = SOURCE_ROOT; };
+		1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SendtoiPhone.workflow; sourceTree = "<group>"; };
 		1B972EAD13E5A1FD002E45B9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3rd-party-licenses.txt"; sourceTree = "<group>"; };
 		1B972EB713E5F299002E45B9 /* pushmenu.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pushmenu.sdef; sourceTree = "<group>"; };
@@ -197,6 +198,7 @@
 		1B38564313E359CA002FF437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */,
 				1B972EAD13E5A1FD002E45B9 /* license.txt */,
 				1BDF04C013E3656800C52B42 /* pushmenu_menu.png */,
 				1B38567113E359DD002FF437 /* pushmenu_large.png */,
@@ -312,7 +314,7 @@
 				1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */,
 				1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */,
 				1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */,
-				1B972EBF13E60551002E45B9 /* pushmenu-appcast.xml in Resources */,
+				1B827F6B13E7410B00D661CC /* SendtoiPhone.workflow in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
