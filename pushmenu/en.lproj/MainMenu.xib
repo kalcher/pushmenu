@@ -135,7 +135,7 @@
 				</object>
 			</object>
 			<object class="NSWindowTemplate" id="609442678">
-				<int key="NSWindowStyleMask">263</int>
+				<int key="NSWindowStyleMask">279</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{1320, 601}, {277, 334}}</string>
 				<int key="NSWTFlags">1685586944</int>
@@ -154,6 +154,7 @@
 							<string key="NSFrame">{{75, 19}, {126, 17}}</string>
 							<reference key="NSSuperview" ref="817847088"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:1642</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="551928703">
@@ -214,7 +215,7 @@
 											<string key="NSFrameSize">{240, 120}</string>
 											<reference key="NSSuperview" ref="652195558"/>
 											<reference key="NSWindow"/>
-											<reference key="NSNextKeyView" ref="194829435"/>
+											<reference key="NSNextKeyView" ref="543607619"/>
 											<string key="NSReuseIdentifierKey">_NS:3760</string>
 											<object class="NSTextContainer" key="NSTextContainer" id="345909850">
 												<object class="NSLayoutManager" key="NSLayoutManager">
@@ -376,7 +377,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 							<string key="NSFrame">{{18, 54}, {240, 260}}</string>
 							<reference key="NSSuperview" ref="817847088"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="652195558"/>
+							<reference key="NSNextKeyView" ref="194829435"/>
 							<string key="NSReuseIdentifierKey">_NS:148</string>
 							<int key="NSsFlags">133120</int>
 							<reference key="NSVScroller" ref="194829435"/>
@@ -395,7 +396,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
 			<object class="NSWindowTemplate" id="1003223034">
-				<int key="NSWindowStyleMask">263</int>
+				<int key="NSWindowStyleMask">23</int>
 				<int key="NSWindowBacking">2</int>
 				<string key="NSWindowRect">{{718, 554}, {514, 454}}</string>
 				<int key="NSWTFlags">1685586944</int>
@@ -978,6 +979,7 @@ AAEAAQAAAT0AAwAAAAEAAgAAAVIAAwAAAAEAAQAAAVMAAwAAAAIAAQABAAAAAA</bytes>
 											<string key="NSFrame">{{87, 13}, {383, 22}}</string>
 											<reference key="NSSuperview" ref="1044515255"/>
 											<reference key="NSWindow"/>
+											<reference key="NSNextKeyView"/>
 											<string key="NSReuseIdentifierKey">_NS:2943</string>
 											<bool key="NSEnabled">YES</bool>
 											<object class="NSSecureTextFieldCell" key="NSCell" id="427202085">
