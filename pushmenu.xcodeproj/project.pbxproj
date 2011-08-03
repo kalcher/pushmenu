@@ -11,6 +11,7 @@
 		1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01D28113E474D0007C28E4 /* Security.framework */; };
 		1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D28E13E4E570007C28E4 /* JSONKit.m */; };
 		1B37244913E9C97C002A7943 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B37244813E9C97C002A7943 /* Carbon.framework */; };
+		1B37244E13E9C9EF002A7943 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37244D13E9C9EF002A7943 /* DDHotKeyCenter.m */; };
 		1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38563C13E359CA002FF437 /* Cocoa.framework */; };
 		1B38564713E359CA002FF437 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B38564513E359CA002FF437 /* InfoPlist.strings */; };
 		1B38564913E359CA002FF437 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B38564813E359CA002FF437 /* main.m */; };
@@ -67,6 +68,8 @@
 		1B01D28E13E4E570007C28E4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1B01D28F13E4E570007C28E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		1B37244813E9C97C002A7943 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		1B37244C13E9C9EF002A7943 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
+		1B37244D13E9C9EF002A7943 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
 		1B38563813E359CA002FF437 /* pushmenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushmenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B38563C13E359CA002FF437 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		1B38563F13E359CA002FF437 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -144,6 +147,15 @@
 			path = JSONKit;
 			sourceTree = "<group>";
 		};
+		1B37244B13E9C9EF002A7943 /* DDHotKey */ = {
+			isa = PBXGroup;
+			children = (
+				1B37244C13E9C9EF002A7943 /* DDHotKeyCenter.h */,
+				1B37244D13E9C9EF002A7943 /* DDHotKeyCenter.m */,
+			);
+			path = DDHotKey;
+			sourceTree = "<group>";
+		};
 		1B38562D13E359C9002FF437 = {
 			isa = PBXGroup;
 			children = (
@@ -189,6 +201,7 @@
 		1B38564213E359CA002FF437 /* pushmenu */ = {
 			isa = PBXGroup;
 			children = (
+				1B37244B13E9C9EF002A7943 /* DDHotKey */,
 				1B01D28B13E4E570007C28E4 /* JSONKit */,
 				1B01D27A13E47253007C28E4 /* EMKeychain */,
 				1B38564E13E359CA002FF437 /* pushmenuAppDelegate.h */,
@@ -373,6 +386,7 @@
 				1B38565013E359CA002FF437 /* pushmenuAppDelegate.m in Sources */,
 				1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */,
 				1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */,
+				1B37244E13E9C9EF002A7943 /* DDHotKeyCenter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
