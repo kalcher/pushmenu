@@ -31,6 +31,7 @@
 #import "pushmenuAppDelegate.h"
 #import "EMKeychain/EMKeychainItem.h"
 #import "JSONKit/JSONKit.h"
+#import "DDHotKey/DDHotKeyCenter.h"
 
 @implementation pushmenuAppDelegate
 
@@ -117,6 +118,8 @@
         [installService setState:NSOffState];
     }
 
+    // Register the hot key, if active in preferences
+    [self hotKey:self];
 }
 
 - (void)display3rdPartyLicenses:(id)sender{
@@ -649,4 +652,29 @@
         }
     }
 }
+
+
+//////////////////////////////////////////////////
+// Hotkey handling
+//
+// a static hot key (ctrl-command-p) is registered.
+//
+//////////////////////////////////////////////////
+- (void) hotKey:(id) sender {
+
+    DDHotKeyCenter * hkc = [[DDHotKeyCenter alloc] init];
+    
+    if ([shortcut state] == NSOnState) {
+
+        if (![hkc registerHotKeyWithKeyCode:35 modifierFlags:NSControlKeyMask|NSCommandKeyMask 
+                                 target:self action:@selector(clipboard2iPhone:) object:Nil]) {
+            NSLog(@"Could not register hot key.");
+        }
+    } else {
+        [hkc unregisterHotKeyWithKeyCode:35 modifierFlags:NSControlKeyMask|NSCommandKeyMask ];
+    }
+    
+    [hkc release];
+}
+
 @end
