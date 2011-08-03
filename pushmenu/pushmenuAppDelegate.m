@@ -442,18 +442,34 @@
                                                                                    withUsername: NName]; 
     
     if (NKeychainItem == nil) {
-        NSLog(@"Not configured");
+        NSLog(@"Notifo not configured");
         return;
     }
 
     NSString *credentials = [NSString stringWithFormat:@"user = %@:%@\n", 
-                                                       NKeychainItem.username, 
-                                                       NKeychainItem.password];
+                             NKeychainItem.username, 
+                             NKeychainItem.password];
     
-    NSString *payload = [NSString stringWithFormat:@"to=%@&msg=%@", 
-                                                   NKeychainItem.username, 
-                                                   [self urlEncodeString:message]];
-                         
+    // check whether message starts with http
+	// a rather crude check for a valid url
+	NSRange foundRange = [[self urlEncodeString:message] rangeOfString:@"http"];
+    
+    NSString *payload = Nil;
+	
+	if (foundRange.location == 0) {
+		NSURL *url = [NSURL URLWithString:[self urlEncodeString:message]];
+		if(url!=nil) {
+            payload = [NSString stringWithFormat:@"to=%@&msg=%@%@&uri=%@", 
+                                                NKeychainItem.username,
+                                                [self urlEncodeString:@"URL-double tap! "],
+                                                [self urlEncodeString:message],
+                                                url];
+		}
+	} else {
+        payload = [NSString stringWithFormat:@"to=%@&msg=%@", 
+                                            NKeychainItem.username, 
+                                            [self urlEncodeString:message]];
+    }
     // We call curl on the command line to do
     // the heavy lifting for us
     
