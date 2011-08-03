@@ -43,6 +43,7 @@
     IBOutlet NSWindow		*prefWindow;
     IBOutlet NSWindow		*aboutWindow;
     IBOutlet NSButtonCell   *installService;
+    IBOutlet NSButtonCell   *shortcut;
 
     // Prowl
     IBOutlet NSTextField	*ProwlApikey;
@@ -66,7 +67,7 @@
 - (IBAction)clipboard2iPhone:(id)sender;
 - (IBAction)display3rdPartyLicenses:(id)sender;
 - (IBAction)installService:(id)sender;
-
+- (IBAction)hotKey:(id) sender;
 
 - (void)prowlSendMessage:(NSString *)message;
 - (void)notifoSendMessage:(NSString *)message;
