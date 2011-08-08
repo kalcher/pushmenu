@@ -28,10 +28,14 @@
 // SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #import <Cocoa/Cocoa.h>
+#import <Growl/Growl.h>
+
 
 @interface pushmenuAppDelegate : NSScriptCommand <  NSApplicationDelegate,
                                                     NSXMLParserDelegate, 
-                                                    NSTextFieldDelegate> {
+                                                    NSTextFieldDelegate,
+                                                    GrowlApplicationBridgeDelegate
+                                                    > {
     NSWindow                *window;
     NSStatusItem			*pmItem;
     
@@ -60,6 +64,8 @@
     IBOutlet NSTextField    *BoxcarUser; 
     IBOutlet NSTextField    *BoxcarPassword; 
     BOOL                    BoxcarActive;
+                                                        
+    NSData                 *growlImage;
 
 }
 

@@ -83,6 +83,9 @@
 
 - (void) postponedSetup
 {
+    
+    [GrowlApplicationBridge setGrowlDelegate: self];
+
     EMGenericKeychainItem *PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
                                                                                    withUsername: @"prowlApiKey"]; 
     if (PKeychainItem != nil) {
@@ -120,6 +123,11 @@
 
     // Register the hot key, if active in preferences
     [self hotKey:self];
+    
+    NSString* myImage = [[NSBundle mainBundle] pathForResource:@"pushmenu_large" 
+                                                        ofType:@"png"];
+    
+    growlImage = [[NSData alloc] initWithContentsOfFile:myImage]; 
 }
 
 - (void)display3rdPartyLicenses:(id)sender{
@@ -340,15 +348,15 @@
 	[addressParser release];
 	
 	if ([ProwlStatusCode isEqualToString:@"200"]) {
-		/*
-		[GrowlApplicationBridge notifyWithTitle:@"prowlmenu Message sent"
+		
+		[GrowlApplicationBridge notifyWithTitle:@"pushmenu: prowl message sent"
 									description:(NSString *)message
-							   notificationName:@"prowlmenuSent"
-									   iconData:[NSData data]
+							   notificationName:@"pushmenuSent"
+									   iconData:growlImage
 									   priority:0
 									   isSticky:NO
 								   clickContext:nil];
-        */
+        
 	} else {
         
 		NSString *errormessage = @"Unkown error, most probably a connection problem";
@@ -369,26 +377,17 @@
 			errormessage = @"Internal server error, check again later";
 		} 		
 
-		/*
-		[GrowlApplicationBridge notifyWithTitle:@"prowlmenu Error"
+		
+		[GrowlApplicationBridge notifyWithTitle:@"pushmenu: prowl error"
 									description:errormessage
-							   notificationName:@"prowlmenuError"
-									   iconData:[NSData data]
+							   notificationName:@"pushmenuError"
+									   iconData:growlImage
 									   priority:0
 									   isSticky:NO
 								   clickContext:nil];	
-        */
-		NSLog(@"ERROR: %@", errormessage);
-		
-		// should we do an alert modal in case there is no Growl on the system?
-		/*
-         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
-         [alert addButtonWithTitle:@"OK"];
-         [alert setMessageText:@"prowlmenu problem"];
-         [alert setInformativeText:errormessage];
-         [alert setAlertStyle:NSWarningAlertStyle];
-         [alert runModal];
-         */
+        
+		NSLog(@"Growl error: %@", errormessage);
+        
 	}
 }
 
@@ -510,7 +509,26 @@
     // {"status":"success","response_code":2201,"response_message":"OK"}
     
     if (![[deserializedData valueForKey:@"status"] isEqualToString:@"success"]) {
+
         NSLog(@"Error sending message to Notifo.");
+        
+        [GrowlApplicationBridge notifyWithTitle:@"pushmenu: notifo error"
+									description:[deserializedData valueForKey:@"response_message"]
+							   notificationName:@"pushmenuError"
+									   iconData:growlImage
+									   priority:0
+									   isSticky:NO
+								   clickContext:nil];	
+    } else {
+
+        [GrowlApplicationBridge notifyWithTitle:@"pushmenu: notifo message sent"
+									description:(NSString *)message
+							   notificationName:@"pushmenuSent"
+									   iconData:growlImage
+									   priority:0
+									   isSticky:NO
+								   clickContext:nil];
+
     }
 
     [answer release];
@@ -586,6 +604,22 @@
     
     if (!ok) {
         NSLog(@"Error sending message to Boxcar.");
+        [GrowlApplicationBridge notifyWithTitle:@"pushmenu: boxcar error"
+									description:answer
+							   notificationName:@"pushmenuError"
+									   iconData:growlImage
+									   priority:0
+									   isSticky:NO
+								   clickContext:nil];
+        
+    } else {
+        [GrowlApplicationBridge notifyWithTitle:@"pushmenu: boxcar message sent"
+									description:(NSString *)message
+							   notificationName:@"pushmenuSent"
+									   iconData:growlImage
+									   priority:0
+									   isSticky:NO
+								   clickContext:nil];
     }
     
     [answer release];
