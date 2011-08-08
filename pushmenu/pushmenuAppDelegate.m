@@ -29,7 +29,6 @@
 
 
 #import "pushmenuAppDelegate.h"
-#import "EMKeychain/EMKeychainItem.h"
 #import "JSONKit/JSONKit.h"
 #import "DDHotKey/DDHotKeyCenter.h"
 
@@ -86,22 +85,22 @@
     
     [GrowlApplicationBridge setGrowlDelegate: self];
 
-    EMGenericKeychainItem *PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
-                                                                                   withUsername: @"prowlApiKey"]; 
+    PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
+                                                            withUsername: @"prowlApiKey"]; 
     if (PKeychainItem != nil) {
         [ProwlApikey setStringValue: PKeychainItem.password];
     }
 
     NSString *NName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"NotifoUser"];
-    EMGenericKeychainItem *NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
-                                                                                   withUsername: NName]; 
+    NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
+                                                            withUsername: NName]; 
     if (NKeychainItem != nil) {
         [NotifoSecret setStringValue: PKeychainItem.password];
     }
 
     NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-    EMGenericKeychainItem *BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                                   withUsername: BName]; 
+    BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
+                                                            withUsername: BName]; 
     if (BKeychainItem != nil) {
         [BoxcarPassword setStringValue: BKeychainItem.password];
     }
@@ -124,6 +123,7 @@
     // Register the hot key, if active in preferences
     [self hotKey:self];
     
+    // Prepare an icon for the Growl display
     NSString* myImage = [[NSBundle mainBundle] pathForResource:@"pushmenu_large" 
                                                         ofType:@"png"];
     
@@ -144,8 +144,8 @@
     // Prowl
     if(senderInfo == ProwlApikey)
     {
-        EMGenericKeychainItem *PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
-                                                                                       withUsername: @"prowlApiKey"]; 
+        PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
+                                                                withUsername: @"prowlApiKey"]; 
         if (PKeychainItem != nil) {
             [PKeychainItem removeFromKeychain];
         }
@@ -158,8 +158,8 @@
     if( senderInfo == NotifoSecret )
     {
         NSString *NName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"NotifoUser"];
-        EMGenericKeychainItem *NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
-                                                                                       withUsername: NName]; 
+        NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
+                                                                withUsername: NName]; 
         if (NKeychainItem != nil) {
             [NKeychainItem removeFromKeychain];
         }
@@ -170,8 +170,8 @@
     }
     if( senderInfo == NotifoUser ){
         NSString *NName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"NotifoUser"];
-        EMGenericKeychainItem *NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
-                                                                                       withUsername: NName];
+        NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
+                                                                withUsername: NName];
         if (NKeychainItem != nil) {
             [NKeychainItem removeFromKeychain];
         }
@@ -182,20 +182,20 @@
     if( senderInfo == BoxcarPassword )
     {
         NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-        EMGenericKeychainItem *BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                                       withUsername: BName];
+        BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
+                                                                withUsername: BName];
         if (BKeychainItem != nil) {
             [BKeychainItem removeFromKeychain];
         }    
 
         BKeychainItem = [EMGenericKeychainItem addGenericKeychainItemForService:@"pushmenu_Boxcar"   
-                                                                       withUsername:[BoxcarUser stringValue]
-                                                                           password:[BoxcarPassword stringValue]];
+                                                                   withUsername:[BoxcarUser stringValue]
+                                                                       password:[BoxcarPassword stringValue]];
     }
     if( senderInfo == BoxcarUser ){
         NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-        EMGenericKeychainItem *BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                                       withUsername: BName];
+        BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
+                                                                withUsername: BName];
         if (BKeychainItem != nil) {
             [BKeychainItem removeFromKeychain];
         }
@@ -295,8 +295,8 @@
 		message = [message substringToIndex:1000];
 	}
 	
-    EMGenericKeychainItem *PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
-                                                                                   withUsername: @"prowlApiKey"]; 
+    PKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Prowl" 
+                                                            withUsername: @"prowlApiKey"]; 
     if (PKeychainItem == nil) {
         NSLog(@"Not configured");
     }
@@ -440,8 +440,8 @@
 	}
     
     NSString *NName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"NotifoUser"];
-    EMGenericKeychainItem *NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
-                                                                                   withUsername: NName]; 
+    NKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Notifo" 
+                                                            withUsername: NName]; 
     
     if (NKeychainItem == nil) {
         NSLog(@"Notifo not configured");
@@ -546,8 +546,8 @@
 	}
     
     NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-    EMGenericKeychainItem *BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                                   withUsername: BName]; 
+    BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
+                                                            withUsername: BName]; 
     
     if (BKeychainItem == nil) {
         NSLog(@"Not configured");

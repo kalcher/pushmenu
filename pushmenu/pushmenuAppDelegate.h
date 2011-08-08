@@ -29,7 +29,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <Growl/Growl.h>
-
+#import "EMKeychain/EMKeychainItem.h"
 
 @interface pushmenuAppDelegate : NSScriptCommand <  NSApplicationDelegate,
                                                     NSXMLParserDelegate, 
@@ -65,8 +65,12 @@
     IBOutlet NSTextField    *BoxcarPassword; 
     BOOL                    BoxcarActive;
                                                         
-    NSData                 *growlImage;
-
+    NSData                  *growlImage;
+    
+    // keychain
+    EMGenericKeychainItem   *PKeychainItem;
+    EMGenericKeychainItem   *NKeychainItem;
+    EMGenericKeychainItem   *BKeychainItem;
 }
 
 - (IBAction)handleLoginItem:(id)sender;
