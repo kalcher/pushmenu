@@ -10,6 +10,8 @@
 		1B01D27E13E47253007C28E4 /* EMKeychainItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D27C13E47253007C28E4 /* EMKeychainItem.m */; };
 		1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B01D28113E474D0007C28E4 /* Security.framework */; };
 		1B01D29113E4E570007C28E4 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B01D28E13E4E570007C28E4 /* JSONKit.m */; };
+		1B0CEE4A140198C80099C1C0 /* BGHUDAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0CEE46140198970099C1C0 /* BGHUDAppKit.framework */; };
+		1B0CEE4B140198CE0099C1C0 /* BGHUDAppKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1B0CEE46140198970099C1C0 /* BGHUDAppKit.framework */; };
 		1B37244913E9C97C002A7943 /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B37244813E9C97C002A7943 /* Carbon.framework */; };
 		1B37244E13E9C9EF002A7943 /* DDHotKeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B37244D13E9C9EF002A7943 /* DDHotKeyCenter.m */; };
 		1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B38563C13E359CA002FF437 /* Cocoa.framework */; };
@@ -57,6 +59,7 @@
 			files = (
 				1B972EBD13E5FF3C002E45B9 /* Sparkle.framework in CopyFiles */,
 				1BAB0E8A13F09A4100950D20 /* Growl.framework in CopyFiles */,
+				1B0CEE4B140198CE0099C1C0 /* BGHUDAppKit.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +74,7 @@
 		1B01D28D13E4E570007C28E4 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		1B01D28E13E4E570007C28E4 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		1B01D28F13E4E570007C28E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		1B0CEE46140198970099C1C0 /* BGHUDAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BGHUDAppKit.framework; sourceTree = "<group>"; };
 		1B37244813E9C97C002A7943 /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		1B37244C13E9C9EF002A7943 /* DDHotKeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDHotKeyCenter.h; sourceTree = "<group>"; };
 		1B37244D13E9C9EF002A7943 /* DDHotKeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDHotKeyCenter.m; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B37244913E9C97C002A7943 /* Carbon.framework in Frameworks */,
+				1B0CEE4A140198C80099C1C0 /* BGHUDAppKit.framework in Frameworks */,
 				1B01D28213E474D0007C28E4 /* Security.framework in Frameworks */,
 				1B38563D13E359CA002FF437 /* Cocoa.framework in Frameworks */,
 				1B972EBB13E5FCC9002E45B9 /* Sparkle.framework in Frameworks */,
@@ -185,6 +190,7 @@
 		1B38563B13E359CA002FF437 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1B0CEE46140198970099C1C0 /* BGHUDAppKit.framework */,
 				1BAB0E8813F09A0800950D20 /* Growl.framework */,
 				1B37244813E9C97C002A7943 /* Carbon.framework */,
 				1B01D28113E474D0007C28E4 /* Security.framework */,
@@ -506,6 +512,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/binarygod-BGHUDAppKit-6eaee43/DerivedData/BGHUDAppKit/Build/Products/Release\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
@@ -521,6 +528,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../../../Downloads/binarygod-BGHUDAppKit-6eaee43/DerivedData/BGHUDAppKit/Build/Products/Release\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
