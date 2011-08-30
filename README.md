@@ -19,7 +19,7 @@ Features:
 
 
 ![pushmenu](https://github.com/kalcher/pushmenu/raw/master/pushmenu/screenshot.png)
-![pushmenu](http://1pix.me/redirect.php?token=da37adeaf2&image=white.png)
+![](http://1pix.me/redirect.php?token=da37adeaf2&image=white.png)
 
 AppleScript
 ------------
