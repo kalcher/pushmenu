@@ -36,7 +36,6 @@ The message is pushed out to all active services.
 	    end tell
     end run
 
-
 Terminal
 -----------
 The AppleScript interface can also be used to provide terminal access to pushmenu. You need to have the above script (push.scpt) compiled and saved.
@@ -45,3 +44,7 @@ The AppleScript interface can also be used to provide terminal access to pushmen
 Run in Terminal:
 
     osascript /path/to/push.scpt "Hello World"
+
+The script can be compiled with the AppleScript-Editor or also from Terminal
+
+	osacompile -e "on run {input}" -e "tell application \"pushmenu\"" -e "sendmessage input"  -e "end tell" -e "end run" -o push.scpt
