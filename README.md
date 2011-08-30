@@ -16,4 +16,31 @@ Features:
 * Automatic updates via Sparkle
 * Growl support
 
+
 ![pushmenu](https://github.com/kalcher/pushmenu/raw/master/pushmenu/screenshot.png)
+
+AppleScript
+------------
+The AppleScript interface to pushmenu currently consists of one command with one parameter:
+
+*sendmessage text : a text parameter passed to pushmenu*
+
+The message is pushed out to all active services.
+
+#### Example (push.scpt):
+
+    on run {input}
+	    tell application "pushmenu"
+		    sendmessage input
+	    end tell
+    end run
+
+
+Terminal
+-----------
+The AppleScript interface can also be used to provide terminal access to pushmenu. You need to have the above script (push.scpt) compiled and saved.
+
+#### Example:
+Run in Terminal:
+
+    osascript /path/to/push.scpt "Hello World"
