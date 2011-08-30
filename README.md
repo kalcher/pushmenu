@@ -4,14 +4,15 @@ pushmenu
 Push notifications from you Mac to your iOS device via Prowl, Notifo or Boxcar. 
 
 pushmenu is a small menu bar application that sends the content of you clipboard as 
-push notification to you iOS device. 
+push notification to your iOS device. You need to have at least one of the above push message
+services installed on your device.
 
 Features:
 
 * Pushes clipboard content 
 * Provides system service to push any selected text without copying to the clipboard first
 * Keyboard shortcut
-* AppleScript Support (e.g. for Automator support)
+* AppleScript support (e.g. for Automator, Terminal)
 * Credentials are stored in system keychain
 * Automatic updates via Sparkle
 * Growl support
