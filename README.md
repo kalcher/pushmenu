@@ -47,4 +47,4 @@ Run in Terminal:
 
 The script can be compiled with the AppleScript-Editor or also from Terminal
 
-	osacompile -e "on run {input}" -e "tell application \"pushmenu\"" -e "sendmessage input"  -e "end tell" -e "end run" -o push.scpt
+	osacompile -e"on run {input}" -e"tell application \"pushmenu\"" -e"sendmessage input"  -e"end tell" -e"end run" -o push.scpt
