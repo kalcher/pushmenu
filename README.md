@@ -1,7 +1,9 @@
 pushmenu
 =============
 
-Push notifications from you Mac to your iOS device via Prowl, Notifo or Boxcar. 
+Download: http://prowlmenu.googlecode.com/files/pushmenu.zip
+
+Push notifications from you Mac to your iOS device via Prowl or Boxcar. 
 
 pushmenu is a small menu bar application that sends the content of you clipboard as 
 push notification to your iOS device. You need to have at least one of the above push message
