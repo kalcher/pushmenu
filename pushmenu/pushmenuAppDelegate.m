@@ -328,7 +328,7 @@
 	
 	NSData *postData = [post dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES];
 	
-	NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+	NSString *postLength = [NSString stringWithFormat:@"%ld", (unsigned long)[postData length]];
 	
 	NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
 	[request setURL:[NSURL URLWithString:@"https://api.prowlapp.com/publicapi/add"]];
@@ -430,7 +430,8 @@
 }
 
 //////////////////////////////////////////////////
-// Notifo
+//  Notifo
+//  unfortunately the service was discontinued
 //////////////////////////////////////////////////
 - (void)notifoSendMessage:(NSString *)message {
 
