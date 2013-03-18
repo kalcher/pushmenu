@@ -26,6 +26,7 @@
 		1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567313E35A5F002FF437 /* pushmenu.icns */; };
 		1B38567613E35B9A002FF437 /* pushmenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1B38567513E35B9A002FF437 /* pushmenu.png */; };
 		1B827F6B13E7410B00D661CC /* SendtoiPhone.workflow in Resources */ = {isa = PBXBuildFile; fileRef = 1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */; };
+		1B828F8016F75C2900AD8A33 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 1B828F7F16F75C2900AD8A33 /* dsa_pub.pem */; };
 		1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EAD13E5A1FD002E45B9 /* license.txt */; };
 		1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */; };
 		1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */ = {isa = PBXBuildFile; fileRef = 1B972EB713E5F299002E45B9 /* pushmenu.sdef */; };
@@ -97,6 +98,7 @@
 		1B38567313E35A5F002FF437 /* pushmenu.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = pushmenu.icns; sourceTree = SOURCE_ROOT; };
 		1B38567513E35B9A002FF437 /* pushmenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu.png; sourceTree = SOURCE_ROOT; };
 		1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SendtoiPhone.workflow; sourceTree = "<group>"; };
+		1B828F7F16F75C2900AD8A33 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		1B972EAD13E5A1FD002E45B9 /* license.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = license.txt; sourceTree = "<group>"; };
 		1B972EB013E5A402002E45B9 /* 3rd-party-licenses.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "3rd-party-licenses.txt"; sourceTree = "<group>"; };
 		1B972EB713E5F299002E45B9 /* pushmenu.sdef */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = pushmenu.sdef; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 		1B38564313E359CA002FF437 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1B828F7F16F75C2900AD8A33 /* dsa_pub.pem */,
 				1B827F6A13E7410B00D661CC /* SendtoiPhone.workflow */,
 				1B972EAD13E5A1FD002E45B9 /* license.txt */,
 				1BDF04C013E3656800C52B42 /* pushmenu_menu.png */,
@@ -346,6 +349,7 @@
 				1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */,
 				1B827F6B13E7410B00D661CC /* SendtoiPhone.workflow in Resources */,
 				1BAB0E8613F0984C00950D20 /* Growl Registration Ticket.growlRegDict in Resources */,
+				1B828F8016F75C2900AD8A33 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
