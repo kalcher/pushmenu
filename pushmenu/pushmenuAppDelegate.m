@@ -55,8 +55,9 @@
     
     // setup about box
 	NSBundle *bundle = [NSBundle mainBundle];
-	NSString *creditsString = [[[NSString alloc] initWithContentsOfFile:
-                                [bundle pathForResource:@"credits" ofType:@"html"]] autorelease];
+    NSError  *error = nil;
+    NSString *creditsString = [[[NSString alloc] initWithContentsOfFile:[bundle pathForResource:@"credits" ofType:@"html"]
+                                                               encoding:NSUTF8StringEncoding error:&error] autorelease];
     
 	NSAttributedString* creditsHTML = [[[NSAttributedString alloc] initWithHTML:
                                         [creditsString dataUsingEncoding:NSUTF8StringEncoding] 
