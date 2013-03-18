@@ -520,7 +520,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../../Downloads/binarygod-BGHUDAppKit-6eaee43/DerivedData/BGHUDAppKit/Build/Products/Release\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
@@ -537,7 +536,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/../../../Downloads/binarygod-BGHUDAppKit-6eaee43/DerivedData/BGHUDAppKit/Build/Products/Release\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pushmenu/pushmenu-Prefix.pch";
