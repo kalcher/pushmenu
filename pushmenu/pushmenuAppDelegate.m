@@ -74,6 +74,7 @@
     [NotifoSecret setDelegate:self];
     [BoxcarUser setDelegate:self];
     [BoxcarPassword setDelegate:self];
+    [BoxcarToken setDelegate:self];
 
     // postponed setup
     [self performSelector: @selector(postponedSetup)
@@ -99,11 +100,10 @@
         [NotifoSecret setStringValue: PKeychainItem.password];
     }
 
-    NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
     BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                            withUsername: BName]; 
+                                                            withUsername: @"BoxcarToken"];
     if (BKeychainItem != nil) {
-        [BoxcarPassword setStringValue: BKeychainItem.password];
+        [BoxcarToken setStringValue: BKeychainItem.password];
     }
 
     if ([[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"systemstartup"] == Nil) {
@@ -180,21 +180,21 @@
     }
     
     // Boxcar
-    if( senderInfo == BoxcarPassword )
+    if( senderInfo == BoxcarToken )
     {
-        NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
+        //NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
         BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                                withUsername: BName];
+                                                                withUsername: @"BoxcarToken"];
         if (BKeychainItem != nil) {
             [BKeychainItem removeFromKeychain];
         }    
 
         BKeychainItem = [EMGenericKeychainItem addGenericKeychainItemForService:@"pushmenu_Boxcar"   
-                                                                   withUsername:[BoxcarUser stringValue]
-                                                                       password:[BoxcarPassword stringValue]];
+                                                                   withUsername:@"BoxcarToken"
+                                                                       password:[BoxcarToken stringValue]];
     }
     if( senderInfo == BoxcarUser ){
-        NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
+        NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarToken"];
         BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
                                                                 withUsername: BName];
         if (BKeychainItem != nil) {
@@ -547,20 +547,17 @@
 		message = [message substringToIndex:1000];
 	}
     
-    NSString *BName = [[[NSUserDefaultsController sharedUserDefaultsController] values] valueForKey:@"BoxcarUser"];
-    BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar" 
-                                                            withUsername: BName]; 
+    BKeychainItem = [EMGenericKeychainItem genericKeychainItemForService: @"pushmenu_Boxcar"
+                                                            withUsername: @"BoxcarToken"];
     
     if (BKeychainItem == nil) {
-        NSLog(@"Not configured");
+        NSLog(@"Boxcar not configured");
         return;
     }
     
-    NSString *credentials = [NSString stringWithFormat:@"user = %@:%@\n", 
-                             BKeychainItem.username, 
-                             BKeychainItem.password];
     
-    NSString *payload = [NSString stringWithFormat:@"notification[from_screen_name]=pushmenu&notification[message]=%@", 
+    NSString *payload = [NSString stringWithFormat:@"user_credentials=%@&notification[title]=pushmenu&notification[long_message]=%@",
+                         BKeychainItem.password,
                          [self urlEncodeString:message]];
     
     // We call curl on the command line to do
@@ -568,9 +565,8 @@
     
     NSTask *task = [NSTask new];
     [task setLaunchPath:@"/usr/bin/curl"];
-    [task setArguments:[NSArray arrayWithObjects:@"-K-",
-                                @"-d", payload, @"-i",
-                                @"https://boxcar.io/notifications", 
+    [task setArguments:[NSArray arrayWithObjects: @"-d", payload, @"-i",
+                                @"https://new.boxcar.io/api/notifications",
                                 nil]];
     
     // NSLog(@"%@",[[task arguments]description]);
@@ -584,8 +580,6 @@
     [task setStandardError:devnull];
     
     [task launch];
-    [[inpipe fileHandleForWriting] writeData: [credentials dataUsingEncoding: NSUTF8StringEncoding]];
-    [[inpipe fileHandleForWriting] closeFile];
     
     NSData *data = [[pipe fileHandleForReading] readDataToEndOfFile];
 
@@ -598,7 +592,7 @@
     NSArray *lines = [answer componentsSeparatedByString:@"\n"];
     BOOL ok = FALSE;
     for(NSString *line in lines) {
-        NSRange range = [line rangeOfString:@"Status: 200"] ;
+        NSRange range = [line rangeOfString:@"Status: 201"] ;
         if (range.location == 0) {
             ok = TRUE;
         }

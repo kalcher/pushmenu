@@ -62,7 +62,8 @@
                                                
     // Boxcar
     IBOutlet NSTextField    *BoxcarUser; 
-    IBOutlet NSTextField    *BoxcarPassword; 
+    IBOutlet NSTextField    *BoxcarPassword;
+    IBOutlet NSTextField    *BoxcarToken;   
     BOOL                    BoxcarActive;
                                                         
     NSData                  *growlImage;

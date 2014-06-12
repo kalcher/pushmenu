@@ -36,7 +36,7 @@
 		1BAB0E8913F09A0800950D20 /* Growl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BAB0E8813F09A0800950D20 /* Growl.framework */; };
 		1BAB0E8A13F09A4100950D20 /* Growl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 1BAB0E8813F09A0800950D20 /* Growl.framework */; };
 		1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04C013E3656800C52B42 /* pushmenu_menu.png */; };
-		1BDF04CF13E36A3000C52B42 /* credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits.html */; };
+		1BDF04CF13E36A3000C52B42 /* credits-tmpl.html in Resources */ = {isa = PBXBuildFile; fileRef = 1BDF04CE13E36A3000C52B42 /* credits-tmpl.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,7 +107,7 @@
 		1BAB0E8513F0984C00950D20 /* Growl Registration Ticket.growlRegDict */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Growl Registration Ticket.growlRegDict"; sourceTree = "<group>"; };
 		1BAB0E8813F09A0800950D20 /* Growl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Growl.framework; sourceTree = "<group>"; };
 		1BDF04C013E3656800C52B42 /* pushmenu_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pushmenu_menu.png; sourceTree = "<group>"; };
-		1BDF04CE13E36A3000C52B42 /* credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = credits.html; sourceTree = "<group>"; };
+		1BDF04CE13E36A3000C52B42 /* credits-tmpl.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "credits-tmpl.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,7 +232,7 @@
 				1B38567113E359DD002FF437 /* pushmenu_large.png */,
 				1B38567513E35B9A002FF437 /* pushmenu.png */,
 				1B38567313E35A5F002FF437 /* pushmenu.icns */,
-				1BDF04CE13E36A3000C52B42 /* credits.html */,
+				1BDF04CE13E36A3000C52B42 /* credits-tmpl.html */,
 				1B38564413E359CA002FF437 /* pushmenu-Info.plist */,
 				1B38564513E359CA002FF437 /* InfoPlist.strings */,
 				1B38564813E359CA002FF437 /* main.m */,
@@ -276,7 +276,7 @@
 				1B38563513E359CA002FF437 /* Frameworks */,
 				1B38563613E359CA002FF437 /* Resources */,
 				1B972EBC13E5FDA3002E45B9 /* CopyFiles */,
-				1B827F7813E76D4B00D661CC /* Run Script */,
+				1B551E8A194A4EF9007F0AF5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -312,7 +312,8 @@
 		1B38562F13E359C9002FF437 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastTestingUpgradeCheck = 0510;
+				LastUpgradeCheck = 0510;
 			};
 			buildConfigurationList = 1B38563213E359C9002FF437 /* Build configuration list for PBXProject "pushmenu" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -343,7 +344,7 @@
 				1B38567413E35A5F002FF437 /* pushmenu.icns in Resources */,
 				1B38567613E35B9A002FF437 /* pushmenu.png in Resources */,
 				1BDF04C113E3656800C52B42 /* pushmenu_menu.png in Resources */,
-				1BDF04CF13E36A3000C52B42 /* credits.html in Resources */,
+				1BDF04CF13E36A3000C52B42 /* credits-tmpl.html in Resources */,
 				1B972EAE13E5A1FD002E45B9 /* license.txt in Resources */,
 				1B972EB113E5A402002E45B9 /* 3rd-party-licenses.txt in Resources */,
 				1B972EB813E5F299002E45B9 /* pushmenu.sdef in Resources */,
@@ -378,19 +379,18 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
-		1B827F7813E76D4B00D661CC /* Run Script */ = {
+		1B551E8A194A4EF9007F0AF5 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /usr/bin/ruby;
-			shellScript = "#!/usr/bin/ruby\n# xcode-git-cfbundleversion.rb\n# is in the Public Domain (http://en.wikipedia.org/wiki/Public_Domain)\n#\n# This script updates CFBundleVersion in Info.plist file with short Git revision string (need no ruby gems)\n# http://github.com/digdog/xcode-git-cfbundleversion/\n#\n# Based on\n# http://github.com/jsallis/xcode-git-versioner\n# http://github.com/juretta/iphone-project-tools/tree/v1.0.3\n\n# Fail if not run from Xcode\nraise \"Must be run from Xcode's Run Script Build Phase\" unless ENV['XCODE_VERSION_ACTUAL']\n\n# Get the current git revision hash\nrevision = `/usr/bin/git rev-parse --short HEAD`.chomp!\n\nif (revision)\n# Update Info.plist file\nplistFile = \"#{ENV['BUILT_PRODUCTS_DIR']}/#{ENV['INFOPLIST_PATH']}\"\ncreditsFile = \"#{ENV['BUILT_PRODUCTS_DIR']}/#{ENV['UNLOCALIZED_RESOURCES_FOLDER_PATH']}\"\ncreditsFile << \"/credits.html\"\n\n# Convert the binary plist to xml based\n`/usr/bin/plutil -convert xml1 #{plistFile}`\n\n# Open Info.plist and set the CFBundleshortVersionString value to the \"CFBuildVersion (revision hash)\" format\nlines = IO.readlines(plistFile).join\n\n# get the bundle version\nversion = lines.match(/(<key>CFBundleVersion<\\/key>\\n\\t<string>)(\\d+\\.\\d+)(<\\/string>)/)[2]\n\n# replace short version with \"bundle version (revision)\"\nlines.gsub!(/(<key>CFBundleShortVersionString<\\/key>\\n\\t<string>)(\\d+\\.\\d+)(<\\/string>)/, \"\\\\1#{version} (#{revision})\\\\3\")\n\n# change the credits.html file\nclines = IO.readlines(creditsFile).join\nclines.gsub!(/(Release )(\\d+\\.\\d+)( \\(.*\\))/, \"\\\\1#{version} (#{revision})\")\n\n# Overwrite the original Info.plist file with our updated version\nFile.open(plistFile, 'w') {|f| f.puts lines}\n# and the credits file\nFile.open(creditsFile, 'w') {|f| f.puts clines\n                                 f.close_write\n}\n\n# Convert back to binary plist\n`/usr/bin/plutil -convert binary1 #{plistFile}`\n\n# Report to the user\nputs \"CFBundleVersion has revision number #{revision} in #{plistFile}\"\nend";
+			shellPath = /bin/sh;
+			shellScript = "GIT_RELEASE_VERSION=$(git describe --tags --always)\nCOMMITS=$(git rev-list HEAD | wc -l)\nCOMMITS=$(($COMMITS))\necho ${GIT_RELEASE_VERSION}\necho \"${BUILT_PRODUCTS_DIR}/\"\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleShortVersionString\" \"${GIT_RELEASE_VERSION#*v}\"\ndefaults write \"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH%.*}\" \"CFBundleVersion\" \"${COMMITS}\"\nsed -e \"s/xxx/${GIT_RELEASE_VERSION}/g\" \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/credits-tmpl.html\" > \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/credits.html\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -465,8 +465,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -480,15 +482,18 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
-				ONLY_ACTIVE_ARCH = NO;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -496,24 +501,30 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				CURRENT_PROJECT_VERSION = 0.2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};

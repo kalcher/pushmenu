@@ -262,7 +262,7 @@ static BOOL _logsErrors;
 	if (returnStatus != noErr || !item)
 	{
 		if (_logsErrors)
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [[NSError errorWithDomain:NSOSStatusErrorDomain code:returnStatus userInfo:nil] description] );
 		return nil;
 	}
 	NSString *passwordString = [[[NSString alloc] initWithData:[NSData dataWithBytes:password length:passwordLength] encoding:NSUTF8StringEncoding] autorelease];
@@ -288,7 +288,7 @@ static BOOL _logsErrors;
 	if (returnStatus != noErr || !item)
 	{
 		if (_logsErrors)
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [[NSError errorWithDomain:NSOSStatusErrorDomain code:returnStatus userInfo:nil] description] );
 		return nil;
 	}
 	return [EMGenericKeychainItem _genericKeychainItemWithCoreKeychainItem:item forServiceName:serviceName username:username password:password];
@@ -404,7 +404,7 @@ static BOOL _logsErrors;
 	if (returnStatus != noErr || !item)
 	{
 		if (_logsErrors)
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd), [[NSError errorWithDomain:NSOSStatusErrorDomain code:returnStatus userInfo:nil] description] );
 		return nil;
 	}
 	NSString *passwordString = [[[NSString alloc] initWithData:[NSData dataWithBytes:password length:passwordLength] encoding:NSUTF8StringEncoding] autorelease];
@@ -437,7 +437,7 @@ static BOOL _logsErrors;
 	if (returnStatus != noErr || !item)
 	{
 		if (_logsErrors)
-			NSLog(@"Error (%@) - %s", NSStringFromSelector(_cmd), GetMacOSStatusErrorString(returnStatus));
+			NSLog(@"Error (%@) - %@", NSStringFromSelector(_cmd),[[NSError errorWithDomain:NSOSStatusErrorDomain code:returnStatus userInfo:nil] description] );
 		return nil;
 	}
 	return [EMInternetKeychainItem _internetKeychainItemWithCoreKeychainItem:item forServer:server username:username password:password path:path port:port protocol:protocol];
